@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "907906494190",
+    "firebase_url": "https://pictionisforghouls.firebaseio.com",
+    "project_id": "pictionisforghouls",
+    "storage_bucket": "pictionisforghouls.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:907906494190:android:883102a267d3fa7b",
+        "android_client_info": {
+          "package_name": "com.theghouls.pictionis"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "907906494190-jiseuro81k9u1frbv1376fr4tgcq3jo9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUiIlRh_OHlcrqTeh1jsNJnvhYgbBra1w"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

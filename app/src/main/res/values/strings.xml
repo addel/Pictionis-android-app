@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Pictionis</string>
+    <string name="txtFieldPassword">Entrez votre password</string>
+    <string name="txtFieldMail">Entrez votre e-mail</string>
+    <string name="btnForgetAccount">Mot de passe oublié ?</string>
+    <string name="btnRegisterTitle">S\'enregister</string>
+    <string name="infoMail">Veuillez renseigner une adresse mail</string>
+    <string name="infosPwdEmpty">Veuillez renseigner une password</string>
+    <string name="infosPwdTooSmall">Veuillez renseigner une password de 6 charactere minimun</string>
+    <string name="connectionOK"><![CDATA["Connection Internet => "]]></string>
+    <string name="connectionInternetNotOK">Non connecté à Internet</string>
+    <string name="title_activity_login">Se connecter</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Se connecter</string>
+    <string name="error_invalid_email">Cette adresse est invalid</string>
+    <string name="error_invalid_password">Ce mot de passe est trop court </string>
+    <string name="error_incorrect_password">Mot de passe incorrect</string>
+    <string name="error_field_required">Ce champs est requis</string>
+    <string name="permission_rationale">"Permission requie"
+    </string>
+    <string name="btnlogin">Se connecter</string>
+    <string name="btnAlreadyAccount">J\'ai déja un compte !</string>
+    <string name="btnNotHaveAccount">Pas de compte ? Enregistrez vous !</string>
+</resources>
