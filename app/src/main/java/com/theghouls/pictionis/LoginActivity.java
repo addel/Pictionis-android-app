@@ -3,6 +3,7 @@ package com.theghouls.pictionis;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
@@ -43,9 +44,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static android.Manifest.permission.READ_CONTACTS;
+import static android.content.Context.CONNECTIVITY_SERVICE;
 
 public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<Cursor> {
 
+    //////////////////
+    /// DECLARATION///
+    //////////////////
     private static final int REQUEST_READ_CONTACTS = 0;
 
     // UI pointer.
@@ -54,7 +59,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     private View mProgressView, mLoginFormView;
 
     // Firebase Auth
-    private FirebaseAuth auth;
+    private FirebaseAuth mAuth;
 
 
     /////////////////////
@@ -64,14 +69,14 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_login);
 
-        auth = FirebaseAuth.getInstance();
-
-        if(auth.getCurrentUser() != null){
+        // on créer une instance de Firebase Auth, vous devriez devinnette quel pattern est utiliser
+        mAuth = FirebaseAuth.getInstance();
+        // si on a un user on redirige direct vers la mainView
+        if(mAuth.getCurrentUser() != null){
             startActivity(new Intent(LoginActivity.this, MainActivity.class));
         }
-
-        setContentView(R.layout.activity_login);
 
         mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
         populateAutoComplete();
@@ -82,10 +87,12 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         Button mEmailSignInButton = (Button) findViewById(R.id.email_sign_in_button);
         mEmailSignInButton.setOnClickListener(btnSigninListener);
 
+        Button loginButton = (Button) findViewById(R.id.gotoLogin);
+
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
 
-        auth = FirebaseAuth.getInstance();
+        mAuth = FirebaseAuth.getInstance();
 
     }
 
@@ -226,7 +233,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         } else {
             showProgress(true);
 
-            auth.signInWithEmailAndPassword(email, password)
+            mAuth.signInWithEmailAndPassword(email, password)
                     .addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
@@ -313,7 +320,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     }
 
     public final boolean isInternetConnection(){
-        ConnectivityManager con = (ConnectivityManager) getSystemService(getApplicationContext().CONNECTIVITY_SERVICE);
+        getApplicationContext();
+        ConnectivityManager con = (ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
         NetworkInfo activeNetwork = con.getActiveNetworkInfo();
 
         if(activeNetwork != null){

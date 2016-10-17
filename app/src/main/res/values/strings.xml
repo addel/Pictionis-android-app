@@ -24,4 +24,8 @@
     <string name="btnlogin">Se connecter</string>
     <string name="btnAlreadyAccount">J\'ai déja un compte !</string>
     <string name="btnNotHaveAccount">Pas de compte ? Enregistrez vous !</string>
+    <string name="dialog_reset_message">Pour recevoir les instructions de réinitialisation de votre mot de passe, indiquez votre e-mail.</string>
+    <string name="dialog_reset_title">Mot de passe oublié ?</string>
+    <string name="failToSendResetMail">Echec Lors de l\'envoi du mail !</string>
+    <string name="loggout_btn">Se déconnecter</string>
 </resources>
