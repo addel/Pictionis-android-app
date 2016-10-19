@@ -19,8 +19,7 @@
     <string name="error_invalid_password">Ce mot de passe est trop court </string>
     <string name="error_incorrect_password">Mot de passe incorrect</string>
     <string name="error_field_required">Ce champs est requis</string>
-    <string name="permission_rationale">"Permission requie"
-    </string>
+    <string name="permission_rationale">"Permission requie"</string>
     <string name="btnlogin">Se connecter</string>
     <string name="btnAlreadyAccount">J\'ai déja un compte !</string>
     <string name="btnNotHaveAccount">Pas de compte ? Enregistrez vous !</string>
@@ -28,4 +27,12 @@
     <string name="dialog_reset_title">Mot de passe oublié ?</string>
     <string name="failToSendResetMail">Echec Lors de l\'envoi du mail !</string>
     <string name="loggout_btn">Se déconnecter</string>
+
+    <!-- drawing -->
+    <string name="start_new">Nouveau dessin</string>
+    <string name="brush">Pinceau</string>
+    <string name="erase">Effacer</string>
+    <string name="save">Sauvegarder</string>
+    <string name="paint">Peindre</string>
+    <string name="drawing_view_title">Dessine moi un mouton</string>
 </resources>

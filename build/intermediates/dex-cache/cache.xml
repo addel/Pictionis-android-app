@@ -3,12 +3,30 @@
 
     <item
         is-multidex="true"
-        jar="/Users/admin/Desktop/Pictionis/Pictionis/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/classes.jar"
+        jar="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
-        <dex dex="/Users/admin/Desktop/Pictionis/Pictionis/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-24.2.1_fa2c73574b28e20f1bac436ce8dba40871c5273a/classes.dex" />
+        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
+        <dex dex="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-24.2.1_9dd54f8e5fec0e5ab21193c2bc51d725e8f8f406/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth/9.2.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="20ca7888c59f63d439f218a8810c88039f8bc7db">
+        <dex dex="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-auth-9.2.0_ff4c2cfb89d204472493476ba5ba93b3676f6842/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
+        <dex dex="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-24.2.1_2c88f5b146773ca88dc48f869638fda763a9dbe2.jar" />
     </item>
     <item
         is-multidex="true"
@@ -21,15 +39,6 @@
     </item>
     <item
         is-multidex="true"
-        jar="/Users/admin/Desktop/Pictionis/Pictionis/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/24.2.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="7521486d9bfd2cd9e756e0cf75ed7d97f2ce2d3b">
-        <dex dex="/Users/admin/Desktop/Pictionis/Pictionis/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-24.2.1_3cd45e4fb666c9b0f86d3c742e9d6eb75969229c/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="/Users/admin/Desktop/Pictionis/Pictionis/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth-module/9.0.2/jars/classes.jar"
         jumboMode="true"
         optimize="true"
@@ -38,13 +47,13 @@
         <dex dex="/Users/admin/Desktop/Pictionis/Pictionis/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-auth-module-9.0.2_659e2b09153bcb52cc55990ce4589d50de886744/classes.dex" />
     </item>
     <item
-        is-multidex="true"
-        jar="/Users/admin/Desktop/Pictionis/Pictionis/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/classes.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/exploded-aar/com.google.firebase/firebase-common/9.2.0/jars/classes.jar"
+        jumboMode="false"
         optimize="true"
         revision="24.0.3"
-        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
-        <dex dex="/Users/admin/Desktop/Pictionis/Pictionis/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-24.2.1_0f3b228805f46161714f2b5c9acf0c096d5a3fd6/classes.dex" />
+        sha1="363f626ad5686283250cdb6073ae1bba5cb07a87">
+        <dex dex="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-common-9.2.0_e81ad4400d1e4e05ee349c619a9061dc0f6635ce.jar" />
     </item>
     <item
         is-multidex="true"
@@ -57,12 +66,48 @@
     </item>
     <item
         is-multidex="true"
+        jar="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
+        <dex dex="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-24.2.1_1a59d89c37217f10c75a28dc0b4a91de602b9d0c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/9.2.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="593fbaec1c3e100480a2bd72457b64b7dde6ac2d">
+        <dex dex="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tasks-9.2.0_af2e6c0a9c7253f16ea2f58e64a20321ac47439d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
+        <dex dex="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_5ba779dc1e81b8e16f6d316c1ab1d75ef20030f2/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/Users/admin/Desktop/Pictionis/Pictionis/app/build/intermediates/exploded-aar/com.google.firebase/firebase-common/9.0.2/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
         sha1="9919563cffd8e3732e944d3c437d4b9575a08448">
         <dex dex="/Users/admin/Desktop/Pictionis/Pictionis/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-common-9.0.2_9597887235cc4802b1f6be83874b6fde61db25f3/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
+        <dex dex="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/pre-dexed/debug/com.android.support-support-media-compat-24.2.1_9b4d1a387662562ce9a8ff7bc1ebf7ffaaaac36e.jar" />
     </item>
     <item
         is-multidex="true"
@@ -72,6 +117,348 @@
         revision="24.0.3"
         sha1="568d5bda0b4d51f90d978ace369bb9ad024d2057">
         <dex dex="/Users/admin/Desktop/Pictionis/Pictionis/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-auth-common-9.0.2_4e4601235da70709103d94dbce556cc90c027693/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/admin/Desktop/Pictionis/Pictionis/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="fa91e9834b0a12c57f7bc7ad7247cc8203386e90">
+        <dex dex="/Users/admin/Desktop/Pictionis/Pictionis/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_5bd423abe59f4d63e64ba597f808576654422dfe/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/exploded-aar/com.android.support/design/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="e03f47f3d1017a093bb3239d4ec47c3447f40744">
+        <dex dex="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-24.2.1_80cc1dd81ac99ed96d85e9d4d63579a1483f3b97/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/admin/Desktop/Pictionis/Pictionis/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/9.0.2/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="b3d0809a742c5f768c6aa9efc6decd5c1d6cd227">
+        <dex dex="/Users/admin/Desktop/Pictionis/Pictionis/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-iid-9.0.2_7009382d0019dd64df74ca4cecd443350926e0da/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/admin/Desktop/Pictionis/Pictionis/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
+        <dex dex="/Users/admin/Desktop/Pictionis/Pictionis/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-24.2.1_5cc949703a0f2e191a52ba25424fc20e18915aae/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-24.2.1_3a3e23cb35c9b17ee07aea4530e0afc79be6f214/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
+        <dex dex="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_637e7eb65e72f719fda2177866a9d426801d25e2/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="867dad63c33388ff8c7644b236579355036d075f">
+        <dex dex="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_fe3b476d4102b72d9fd35fc361c5d2c0f67c5d22/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
+        <dex dex="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-ui-24.2.1_3bdbe0c9fe2bb0a1c671ff095df32c55011af09b.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/admin/Desktop/Pictionis/Pictionis/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/9.0.2/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="aec1bc54964a85d851c2c1b1cb7f90f7dbd755ab">
+        <dex dex="/Users/admin/Desktop/Pictionis/Pictionis/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tasks-9.0.2_372c3f11750b0ed1b285477cd7cdc133202735bf/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth-module/9.2.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="e791f7f2fbf9ca5b3b576916533f844dfb384024">
+        <dex dex="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-auth-module-9.2.0_391ccf78ac9f7fdc7384df397c8865c553673c02/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/9.2.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="dd7676ac12aa6653718b7ea33d93ce9d6915d526">
+        <dex dex="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-basement-9.2.0_56c2337cf05133746ecd45285f2f28bbda6e214d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="867dad63c33388ff8c7644b236579355036d075f">
+        <dex dex="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_fe3b476d4102b72d9fd35fc361c5d2c0f67c5d22.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/admin/Desktop/Pictionis/Pictionis/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
+        <dex dex="/Users/admin/Desktop/Pictionis/Pictionis/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-24.2.1_c02d94a57b020b1fe9b17bc7bba29be728f6813c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics/9.2.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="4838df6db988160b107e954e02a745370df543b6">
+        <dex dex="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-analytics-9.2.0_6b18b3cef18a5434e1e1c1fdfdded78f817c0f85/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="7521486d9bfd2cd9e756e0cf75ed7d97f2ce2d3b">
+        <dex dex="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-24.2.1_91ff0bb7d91049dd0469a64967e31daea640d05f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/admin/Desktop/Pictionis/Pictionis/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
+        <dex dex="/Users/admin/Desktop/Pictionis/Pictionis/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_88225c7e303883431305193873d904324fe0dadd/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics-impl/9.2.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="fb15fd9774b5c51dcb39d8e6fa1b6f06bcd1cd34">
+        <dex dex="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-analytics-impl-9.2.0_137736667da87cd2ad491dbe1d70fe8fbe9bb895/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/admin/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/24.2.1/support-annotations-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
+        <dex dex="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/pre-dexed/debug/support-annotations-24.2.1_c733e8857a83d392ace023bf1ef3bdeed79fd404.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/9.2.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="dc4c18602ecffb3e69cda6cdc51ba4feac0f97d7">
+        <dex dex="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-iid-9.2.0_b147afb390453f735d1c40d1a7354475dff5cce9/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth-common/9.2.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="44120508d7240c3e34a05957981a5c3c9b9f61aa">
+        <dex dex="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-auth-common-9.2.0_01089a08175d5f7ae164abb2d82e986caaca3c47/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.2.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="30489a97b06cc3945bdbcc1770089af9e3b3b64d">
+        <dex dex="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-base-9.2.0_6f1c2ca193d32d09a773845ad82e7631976654fc.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/admin/Desktop/Pictionis/Pictionis/app/build/intermediates/exploded-aar/com.android.support/design/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="e03f47f3d1017a093bb3239d4ec47c3447f40744">
+        <dex dex="/Users/admin/Desktop/Pictionis/Pictionis/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-24.2.1_313c37ccd49e0fe1ce557d998d5dd3355d58a575/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/admin/Desktop/Pictionis/Pictionis/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
+        <dex dex="/Users/admin/Desktop/Pictionis/Pictionis/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_5c014c96525f8dcd681ec52499f69a37c8c19e80/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/9.2.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="593fbaec1c3e100480a2bd72457b64b7dde6ac2d">
+        <dex dex="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-tasks-9.2.0_af2e6c0a9c7253f16ea2f58e64a20321ac47439d.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/admin/Desktop/Pictionis/Pictionis/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
+        <dex dex="/Users/admin/Desktop/Pictionis/Pictionis/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_ea25bc5254e1f3926db4332861392017fd35868b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
+        <dex dex="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-24.2.1_835f60cf390fe268273be7479288f3e7ff92665f/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
+        <dex dex="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_89a4ae886a5fe40c224123cb4ca6d8f90c7f5cdc.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
+        <dex dex="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/pre-dexed/debug/com.android.support-support-fragment-24.2.1_f072940ae0a633cbe90a869bd3191cce6602204e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
+        <dex dex="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-24.2.1_74891a44adf6ff25cfb9be850bfaf02c74b61558.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/admin/Desktop/Pictionis/Pictionis/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
+        <dex dex="/Users/admin/Desktop/Pictionis/Pictionis/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-24.2.1_fa2c73574b28e20f1bac436ce8dba40871c5273a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
+        <dex dex="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-24.2.1_2c88f5b146773ca88dc48f869638fda763a9dbe2/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
+        <dex dex="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_5ba779dc1e81b8e16f6d316c1ab1d75ef20030f2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
+        <dex dex="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/pre-dexed/debug/com.android.support-support-compat-24.2.1_9dd54f8e5fec0e5ab21193c2bc51d725e8f8f406.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/admin/Desktop/Pictionis/Pictionis/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="7521486d9bfd2cd9e756e0cf75ed7d97f2ce2d3b">
+        <dex dex="/Users/admin/Desktop/Pictionis/Pictionis/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-24.2.1_3cd45e4fb666c9b0f86d3c742e9d6eb75969229c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/admin/Desktop/Pictionis/Pictionis/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
+        <dex dex="/Users/admin/Desktop/Pictionis/Pictionis/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-24.2.1_0f3b228805f46161714f2b5c9acf0c096d5a3fd6/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
+        <dex dex="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-24.2.1_1a59d89c37217f10c75a28dc0b4a91de602b9d0c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
+        <dex dex="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_7015811d8db575a8e1e964b0d2f81f8f6a3618ab.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/exploded-aar/com.google.firebase/firebase-common/9.2.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="363f626ad5686283250cdb6073ae1bba5cb07a87">
+        <dex dex="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-common-9.2.0_e81ad4400d1e4e05ee349c619a9061dc0f6635ce/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -92,31 +479,40 @@
         <dex dex="/Users/admin/Desktop/Pictionis/Pictionis/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-24.2.1_65e90ce428fd01a008fa4090bee6b25ef13b0871/classes.dex" />
     </item>
     <item
-        is-multidex="true"
-        jar="/Users/admin/Desktop/Pictionis/Pictionis/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/exploded-aar/com.android.support/design/24.2.1/jars/classes.jar"
+        jumboMode="false"
         optimize="true"
         revision="24.0.3"
-        sha1="fa91e9834b0a12c57f7bc7ad7247cc8203386e90">
-        <dex dex="/Users/admin/Desktop/Pictionis/Pictionis/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_5bd423abe59f4d63e64ba597f808576654422dfe/classes.dex" />
+        sha1="e03f47f3d1017a093bb3239d4ec47c3447f40744">
+        <dex dex="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/pre-dexed/debug/com.android.support-design-24.2.1_80cc1dd81ac99ed96d85e9d4d63579a1483f3b97.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/Users/admin/Desktop/Pictionis/Pictionis/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/9.0.2/jars/classes.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.2.1/jars/classes.jar"
+        jumboMode="false"
         optimize="true"
         revision="24.0.3"
-        sha1="b3d0809a742c5f768c6aa9efc6decd5c1d6cd227">
-        <dex dex="/Users/admin/Desktop/Pictionis/Pictionis/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-iid-9.0.2_7009382d0019dd64df74ca4cecd443350926e0da/classes.dex" />
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-24.2.1_3a3e23cb35c9b17ee07aea4530e0afc79be6f214.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/Users/admin/Desktop/Pictionis/Pictionis/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/classes.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="false"
         optimize="true"
         revision="24.0.3"
-        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
-        <dex dex="/Users/admin/Desktop/Pictionis/Pictionis/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-24.2.1_5cc949703a0f2e191a52ba25424fc20e18915aae/classes.dex" />
+        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
+        <dex dex="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_637e7eb65e72f719fda2177866a9d426801d25e2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth-module/9.2.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="e791f7f2fbf9ca5b3b576916533f844dfb384024">
+        <dex dex="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-auth-module-9.2.0_391ccf78ac9f7fdc7384df397c8865c553673c02.jar" />
     </item>
     <item
         is-multidex="true"
@@ -146,13 +542,13 @@
         <dex dex="/Users/admin/Desktop/Pictionis/Pictionis/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-auth-9.0.2_09af45f7b657138cb92c8657f980a9c6fa30e158/classes.dex" />
     </item>
     <item
-        is-multidex="true"
-        jar="/Users/admin/Desktop/Pictionis/Pictionis/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/9.0.2/jars/classes.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth/9.2.0/jars/classes.jar"
+        jumboMode="false"
         optimize="true"
         revision="24.0.3"
-        sha1="aec1bc54964a85d851c2c1b1cb7f90f7dbd755ab">
-        <dex dex="/Users/admin/Desktop/Pictionis/Pictionis/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tasks-9.0.2_372c3f11750b0ed1b285477cd7cdc133202735bf/classes.dex" />
+        sha1="20ca7888c59f63d439f218a8810c88039f8bc7db">
+        <dex dex="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-auth-9.2.0_ff4c2cfb89d204472493476ba5ba93b3676f6842.jar" />
     </item>
     <item
         is-multidex="true"
@@ -165,12 +561,12 @@
     </item>
     <item
         is-multidex="true"
-        jar="/Users/admin/Desktop/Pictionis/Pictionis/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/classes.jar"
+        jar="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
         sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
-        <dex dex="/Users/admin/Desktop/Pictionis/Pictionis/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-24.2.1_c02d94a57b020b1fe9b17bc7bba29be728f6813c/classes.dex" />
+        <dex dex="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-24.2.1_3bdbe0c9fe2bb0a1c671ff095df32c55011af09b/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -183,12 +579,30 @@
     </item>
     <item
         is-multidex="true"
-        jar="/Users/admin/Desktop/Pictionis/Pictionis/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jar="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
-        <dex dex="/Users/admin/Desktop/Pictionis/Pictionis/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_88225c7e303883431305193873d904324fe0dadd/classes.dex" />
+        sha1="aa1247c855c03f65dc5e291a6f977163981014a8">
+        <dex dex="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_b32f604421136977e69eb7e6eb1d2f6ef0881520/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/9.2.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="dd7676ac12aa6653718b7ea33d93ce9d6915d526">
+        <dex dex="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-basement-9.2.0_56c2337cf05133746ecd45285f2f28bbda6e214d/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="7521486d9bfd2cd9e756e0cf75ed7d97f2ce2d3b">
+        <dex dex="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/pre-dexed/debug/com.android.support-recyclerview-v7-24.2.1_91ff0bb7d91049dd0469a64967e31daea640d05f.jar" />
     </item>
     <item
         is-multidex="true"
@@ -209,6 +623,15 @@
         <dex dex="/Users/admin/Desktop/Pictionis/Pictionis/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-24.2.1_12174d3175f8457b78d12dc0ac803f4dfa56c9a5/classes.dex" />
     </item>
     <item
+        is-multidex="false"
+        jar="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics/9.2.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="4838df6db988160b107e954e02a745370df543b6">
+        <dex dex="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-analytics-9.2.0_6b18b3cef18a5434e1e1c1fdfdded78f817c0f85.jar" />
+    </item>
+    <item
         is-multidex="true"
         jar="/Users/admin/Desktop/Pictionis/Pictionis/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/jars/classes.jar"
         jumboMode="true"
@@ -219,30 +642,57 @@
     </item>
     <item
         is-multidex="true"
-        jar="/Users/admin/Desktop/Pictionis/Pictionis/app/build/intermediates/exploded-aar/com.android.support/design/24.2.1/jars/classes.jar"
+        jar="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="e03f47f3d1017a093bb3239d4ec47c3447f40744">
-        <dex dex="/Users/admin/Desktop/Pictionis/Pictionis/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-24.2.1_313c37ccd49e0fe1ce557d998d5dd3355d58a575/classes.dex" />
+        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
+        <dex dex="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-24.2.1_9b4d1a387662562ce9a8ff7bc1ebf7ffaaaac36e/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/9.2.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="dc4c18602ecffb3e69cda6cdc51ba4feac0f97d7">
+        <dex dex="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-iid-9.2.0_b147afb390453f735d1c40d1a7354475dff5cce9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth-common/9.2.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="44120508d7240c3e34a05957981a5c3c9b9f61aa">
+        <dex dex="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-auth-common-9.2.0_01089a08175d5f7ae164abb2d82e986caaca3c47.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics-impl/9.2.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="fb15fd9774b5c51dcb39d8e6fa1b6f06bcd1cd34">
+        <dex dex="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-analytics-impl-9.2.0_137736667da87cd2ad491dbe1d70fe8fbe9bb895.jar" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/admin/Desktop/Pictionis/Pictionis/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jar="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.2.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
-        <dex dex="/Users/admin/Desktop/Pictionis/Pictionis/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_5c014c96525f8dcd681ec52499f69a37c8c19e80/classes.dex" />
+        sha1="30489a97b06cc3945bdbcc1770089af9e3b3b64d">
+        <dex dex="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-base-9.2.0_6f1c2ca193d32d09a773845ad82e7631976654fc/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/admin/Desktop/Pictionis/Pictionis/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jar="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
-        <dex dex="/Users/admin/Desktop/Pictionis/Pictionis/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_ea25bc5254e1f3926db4332861392017fd35868b/classes.dex" />
+        sha1="6766a95cd8e834b3d208237929c9dee006e741ef">
+        <dex dex="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_97b043e6df68fc09ad5b4b6a28d50f29ef5c8225/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -255,12 +705,57 @@
     </item>
     <item
         is-multidex="true"
+        jar="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
+        <dex dex="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_7015811d8db575a8e1e964b0d2f81f8f6a3618ab/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
+        <dex dex="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-utils-24.2.1_835f60cf390fe268273be7479288f3e7ff92665f.jar" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/Users/admin/Desktop/Pictionis/Pictionis/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
         sha1="a1fc6c0ee85f36c4efd25dc3a61f3c217174bbd4">
         <dex dex="/Users/admin/Desktop/Pictionis/Pictionis/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_27b3d5232bfaf05fc6532bf48b972e8372ce28fc/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
+        <dex dex="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-24.2.1_74891a44adf6ff25cfb9be850bfaf02c74b61558/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
+        <dex dex="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_89a4ae886a5fe40c224123cb4ca6d8f90c7f5cdc/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
+        <dex dex="/Users/admin/Desktop/Pictionis/Pictionis-android-app/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-24.2.1_f072940ae0a633cbe90a869bd3191cce6602204e/classes.dex" />
     </item>
 
 </items>
