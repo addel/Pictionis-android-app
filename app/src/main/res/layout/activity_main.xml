@@ -10,8 +10,64 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.theghouls.pictionis.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true">
+
+        <Button
+            android:id="@+id/go_to_pictionis"
+            android:text="@string/app_name"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:radius="30dp"
+            android:shadowColor="#A8A8A8"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="5"
+            android:backgroundTint="@color/colorAccent"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp" />
+
+        <Button
+            android:id="@+id/go_to_draw"
+            android:text="@string/drawing_view_title"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:radius="30dp"
+            android:shadowColor="#A8A8A8"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="5"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp" />
+
+        <Button
+            android:id="@+id/go_to_chat"
+            android:text="Chat"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:radius="30dp"
+            android:shadowColor="#A8A8A8"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="5"
+            android:backgroundTint="@android:color/holo_green_light"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp" />
+
+
+
+    </LinearLayout>
 </RelativeLayout>

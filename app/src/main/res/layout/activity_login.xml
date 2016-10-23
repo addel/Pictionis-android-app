@@ -100,7 +100,7 @@
                     style="@style/Widget.AppCompat.Button.Borderless"
                     android:textSize="12sp"
                     android:textColor="?android:attr/colorActivatedHighlight"
-                    android:id="@+id/gotoLogin"
+                    android:id="@+id/gotoRegister"
                     android:textAllCaps="false"
                     android:textStyle="normal|bold"
                     android:layout_gravity="bottom"

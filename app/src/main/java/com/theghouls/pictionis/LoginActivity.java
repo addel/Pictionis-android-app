@@ -4,12 +4,14 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.app.LoaderManager.LoaderCallbacks;
 
@@ -31,6 +33,7 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -57,6 +60,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     private AutoCompleteTextView mEmailView;
     private EditText mPasswordView;
     private View mProgressView, mLoginFormView;
+    private Button resetPasswordButton;
 
     // Firebase Auth
     private FirebaseAuth mAuth;
@@ -87,7 +91,11 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         Button mEmailSignInButton = (Button) findViewById(R.id.email_sign_in_button);
         mEmailSignInButton.setOnClickListener(btnSigninListener);
 
-        Button loginButton = (Button) findViewById(R.id.gotoLogin);
+        Button registerButton = (Button) findViewById(R.id.gotoRegister);
+        registerButton.setOnClickListener(registerButtonListerner);
+
+        resetPasswordButton = (Button) findViewById(R.id.forgetAccountButton);
+        resetPasswordButton.setOnClickListener(btnResetPwd);
 
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
@@ -144,6 +152,13 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     ////LISTENER///
     //////////////
 
+    private View.OnClickListener registerButtonListerner = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            startActivity(new Intent(LoginActivity.this, registerActivity.class));
+        }
+    };
+
     private View.OnClickListener btnSigninListener = new OnClickListener() {
         @Override
         public void onClick(View view) {
@@ -161,6 +176,57 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 return true;
             }
             return false;
+        }
+    };
+
+    private View.OnClickListener btnResetPwd = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+
+            final EditText edittext = new EditText(LoginActivity.this);
+            LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    LinearLayout.LayoutParams.MATCH_PARENT);
+            edittext.setLayoutParams(lp);
+
+            AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
+
+            builder.setMessage(R.string.dialog_reset_message)
+                    .setTitle(R.string.dialog_reset_title);
+            builder.setIcon(R.drawable.ic_pictionislogo);
+
+            builder.setView(edittext);
+
+            builder.setPositiveButton("Envoyer", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int whichButton) {
+
+                    String email = edittext.getText().toString().trim();
+
+                    if (TextUtils.isEmpty(email)) {
+                        Toast.makeText(getApplication(), R.string.infoMail, Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+
+
+                    mAuth.sendPasswordResetEmail(email)
+                            .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    if(!task.isSuccessful()) {
+                                        Toast.makeText(LoginActivity.this, R.string.failToSendResetMail, Toast.LENGTH_SHORT).show();
+                                    }
+                                }
+                            });
+                }
+            });
+
+            builder.setNegativeButton("Annulez", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int whichButton) {
+                    dialog.cancel();
+                }
+            });
+
+            builder.show();
         }
     };
 
