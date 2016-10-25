@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Pictionis</string>
+
+    <!-- Signing-->
     <string name="txtFieldPassword">Entrez votre password</string>
     <string name="txtFieldMail">Entrez votre e-mail</string>
     <string name="btnForgetAccount">Mot de passe oublié ?</string>
@@ -35,4 +37,11 @@
     <string name="save">Sauvegarder</string>
     <string name="paint">Peindre</string>
     <string name="drawing_view_title">Dessine moi un mouton</string>
+    <string name="sml">Petit</string>
+    <string name="med">Normal</string>
+    <string name="lrg">Grand</string>
+
+    <!-- Channel -->
+    <string name="add_channel_btn">+ channel</string>
+    <string name="add_channel_txtField">Nom d\'un channel</string>
 </resources>

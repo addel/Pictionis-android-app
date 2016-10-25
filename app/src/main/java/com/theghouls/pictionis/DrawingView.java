@@ -6,8 +6,11 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
 import android.util.AttributeSet;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.MotionEvent;
 import android.view.View;
 
@@ -32,6 +35,10 @@ public class DrawingView extends View {
     // coleur de base
     private int paintColor = 0xFF660000;
 
+    private boolean erase = false;
+
+    private float thick_size, last_thick_size;
+
 
 
     public DrawingView(Context context, AttributeSet attrs) {
@@ -43,12 +50,14 @@ public class DrawingView extends View {
     private void setupDrawing(){
         drawPath = new Path();
         drawPaint = new Paint();
+        thick_size = getResources().getInteger(R.integer.medium_size);
+        last_thick_size = thick_size;
 
         // ici on va pouvoir (plus tard ) modifier les propieter du dessin via saisie utilisateur
         // pour l'instant en HARD coding
         drawPaint.setColor(paintColor);
         drawPaint.setAntiAlias(true);
-        drawPaint.setStrokeWidth(20);
+        drawPaint.setStrokeWidth(thick_size);
         drawPaint.setStyle(Paint.Style.STROKE);
         drawPaint.setStrokeJoin(Paint.Join.ROUND);
         drawPaint.setStrokeCap(Paint.Cap.ROUND);
@@ -63,6 +72,41 @@ public class DrawingView extends View {
         paintColor = Color.parseColor(newColor);
         drawPaint.setColor(paintColor);
     }
+
+    public void setErase(boolean isErase){
+        erase = isErase;
+
+        // setXfermode delete une section de bitmap
+        if(erase)
+            drawPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
+        else
+            drawPaint.setXfermode(null);
+    }
+
+    public void setThickSize(float newSize){
+        float pixelAmount = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
+                newSize, getResources().getDisplayMetrics());
+        thick_size=pixelAmount;
+        drawPaint.setStrokeWidth(thick_size);
+    }
+
+    public void setLast_thick_size(float lastSize){
+        last_thick_size=lastSize;
+    }
+
+    public float getLast_thick_size(){
+        return last_thick_size;
+    }
+
+    public void new_paint(){
+        drawCanvas.drawColor(0, PorterDuff.Mode.CLEAR);
+        invalidate();
+    }
+
+
+    ///////////////////////////
+    //// CYCLE LIFEZ METHODE ///
+    ///////////////////////////
 
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
