@@ -16,40 +16,48 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <activity
-            android:name=".MainActivity"
+            android:name=".View.MainActivity"
             android:icon="@drawable/ic_pictionislogo"
-            android:uiOptions="splitActionBarWhenNarrow" >
+            android:uiOptions="splitActionBarWhenNarrow" />
+        <activity
+            android:name=".View.registerActivity"
+            android:label="@string/btnRegisterTitle" />
+        <activity
+            android:name=".View.LoginActivity"
+            android:label="@string/title_activity_login" />
+        <activity
+            android:name=".View.DrawingActivity"
+            android:label="@string/drawing_view_title">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".View.MainActivity" />
+        </activity>
+        <activity android:name=".View.ChatActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".View.channelChatActivity" />
+        </activity>
+        <activity android:name=".View.channelChatActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".View.MainActivity" />
+        </activity>
+        <activity
+            android:name=".View.GamesList"
+            android:label="@string/title_activity_games_list"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
-        </activity>
-
-        <activity android:name=".registerActivity" android:label="@string/btnRegisterTitle" />
-
-        <activity android:name=".LoginActivity" android:label="@string/title_activity_login" />
-
-        <activity android:name=".DrawingActivity" android:label="@string/drawing_view_title">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value=".View.MainActivity" />
         </activity>
-
-        <activity android:name=".ChatActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".channelChatActivity" />
-        </activity>
-
-        <activity android:name=".channelChatActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
-        </activity>
+        <activity android:name=".View.GameTeamBuilding"></activity>
     </application>
 
 </manifest>

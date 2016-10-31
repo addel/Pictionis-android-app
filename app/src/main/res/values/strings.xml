@@ -44,4 +44,8 @@
     <!-- Channel -->
     <string name="add_channel_btn">+ channel</string>
     <string name="add_channel_txtField">Nom d\'un channel</string>
+    <string name="GameListViewTitle"></string>
+
+    <!-- Game part-->
+    <string name="title_activity_games_list">Partie disponible</string>
 </resources>
