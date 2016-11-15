@@ -2,11 +2,13 @@ package com.theghouls.pictionis.Model;
 
 import android.widget.ImageView;
 
+import java.io.Serializable;
+
 /**
  * Created by admin on 31/10/2016.
  */
 
-public class Player {
+public class Player implements Serializable {
 
     private String name;
     private ImageView avatar = null;
@@ -14,6 +16,8 @@ public class Player {
     private int team;
     private int wonGame;
     private int looseGame;
+
+    public Player(){}
 
     public Player(String name, int team, boolean isAdmin) {
 
