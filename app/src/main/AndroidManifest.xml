@@ -19,7 +19,13 @@
         <activity
             android:name=".View.MainActivity"
             android:icon="@drawable/ic_pictionislogo"
-            android:uiOptions="splitActionBarWhenNarrow" />
+            android:uiOptions="splitActionBarWhenNarrow">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".View.registerActivity"
             android:label="@string/btnRegisterTitle" />
@@ -47,17 +53,16 @@
             android:name=".View.GamesList"
             android:label="@string/title_activity_games_list"
             android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".View.MainActivity" />
         </activity>
-        <activity android:name=".View.GameTeamBuilding"></activity>
+        <activity android:name=".View.GameTeamBuilding">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".View.MainActivity" />
+        </activity>
+        <activity android:name=".View.Game"></activity>
     </application>
 
 </manifest>

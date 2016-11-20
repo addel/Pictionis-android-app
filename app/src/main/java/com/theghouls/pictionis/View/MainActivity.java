@@ -26,10 +26,13 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
 import com.theghouls.pictionis.R;
 
+import static com.theghouls.pictionis.R.id.go_to_pictionis;
+
 public class MainActivity extends AppCompatActivity {
 
     ////// QUESTION onClick DANS LE XML VS OnCliCKListener
     ////// CUSTOM VIEW VS FRAGMENT
+    ////// POURQUOI Finish();
 
 
     // Firebase Auth
@@ -38,20 +41,21 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseUser user;
     private String username;
 
-    private Button btn_drawActivity, btn_chatActivity;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         // button
-        btn_drawActivity = (Button) findViewById(R.id.go_to_draw);
-        btn_chatActivity = (Button) findViewById(R.id.go_to_chat);
+        Button btn_drawActivity = (Button) findViewById(R.id.go_to_draw);
+        Button btn_chatActivity = (Button) findViewById(R.id.go_to_chat);
+        Button btn_pictionis = (Button) findViewById(R.id.go_to_pictionis);
+
 
         // Listener
         btn_drawActivity.setOnClickListener(btn_drawActivityListener);
         btn_chatActivity.setOnClickListener(btn_chatActivityListener);
+        btn_pictionis.setOnClickListener(btn_pictionisListener);
 
         auth = FirebaseAuth.getInstance();
 
@@ -86,6 +90,15 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             Intent intent = new Intent(MainActivity.this, channelChatActivity.class);
+            intent.putExtra("username", username);
+            startActivity(intent);
+        }
+    };
+
+    private View.OnClickListener btn_pictionisListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent intent = new Intent(MainActivity.this, GamesList.class);
             intent.putExtra("username", username);
             startActivity(intent);
         }

@@ -45,20 +45,15 @@ public class GamesList extends AppCompatActivity {
 
     private ArrayAdapter<String> arrayAdapter;
     private ArrayList<String> list_channel = new ArrayList<>();
-    private ListView listView;
 
     // Firebase database ref
     private FirebaseDatabase database = FirebaseDatabase.getInstance();
     private DatabaseReference root = database.getReference().child("Games_list");
 
-    // Firebase Auth
-    private FirebaseAuth auth;
-    // Firebase User
-    private FirebaseUser user;
-    private ArrayList<Player> listOfPlayers;
 
     private String username;
     private Player player;
+    private boolean isMulti;
 
 
     @Override
@@ -72,13 +67,9 @@ public class GamesList extends AppCompatActivity {
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(addGamesListener);
 
-        auth = FirebaseAuth.getInstance();
-        user = auth.getCurrentUser();
-        if(user != null){
-            username = user.getDisplayName();
-        }
+        username = getIntent().getExtras().get("username").toString();
 
-        listView = (ListView)findViewById(R.id.game_list);
+        ListView listView = (ListView) findViewById(R.id.game_list);
         listView.setOnItemClickListener(listViewItemListener);
 
         arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, list_channel);
@@ -102,11 +93,31 @@ public class GamesList extends AppCompatActivity {
 
     private AdapterView.OnItemClickListener listViewItemListener = new AdapterView.OnItemClickListener() {
         @Override
-        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-            Intent intent = new Intent(GamesList.this, GameTeamBuilding.class);
-            intent.putExtra("username", username);
-            intent.putExtra("game_names", ((TextView) view).getText().toString());
-            startActivity(intent);
+        public void onItemClick(AdapterView<?> parent, final View view, int position, long id) {
+            FirebaseDatabase database = FirebaseDatabase.getInstance();
+            DatabaseReference rootGame = database.getReference().child("Games_list").child(((TextView) view).getText().toString()).child("isMulti");
+            rootGame.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    isMulti = (boolean) dataSnapshot.getValue();
+
+                    Intent intent;
+                    if(isMulti){
+                        intent = new Intent(GamesList.this, GameTeamBuilding.class);
+                    }else{
+                        intent = new Intent(GamesList.this, Game.class);
+                    }
+
+                    intent.putExtra("username", username);
+                    intent.putExtra("game_names", ((TextView) view).getText().toString());
+                    startActivity(intent);
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+
+                }
+            });
         }
     };
 
@@ -154,18 +165,22 @@ public class GamesList extends AppCompatActivity {
 
         builder.setView(edittext);
 
-        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+        builder.setPositiveButton("Un joueur", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int whichButton) {
+
                 String nom = edittext.getText().toString().trim();
 
                 Map <String, Object> map = new HashMap<String, Object>();
                 Map <String, Object> map2 = new HashMap<String, Object>();
                 Map <String, Object> players = new HashMap<String, Object>();
+                Map <String, Object> multi = new HashMap<String, Object>();
                 player = new Player(username, 1, true);
                 map2.put(username, player);
                 players.put("players", map2);
                 map.put(nom, players);
+                multi.put("isMulti", false);
                 root.updateChildren(map);
+                root.child(nom).updateChildren(multi);
 
             }
         });
@@ -173,6 +188,24 @@ public class GamesList extends AppCompatActivity {
         builder.setNegativeButton("Annulez", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int whichButton) {
                 dialog.cancel();
+            }
+        });
+        builder.setNeutralButton("Multi", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+
+                String nom = edittext.getText().toString().trim();
+
+                Map <String, Object> map = new HashMap<String, Object>();
+                Map <String, Object> map2 = new HashMap<String, Object>();
+                Map <String, Object> players = new HashMap<String, Object>();
+                Map <String, Object> multi = new HashMap<String, Object>();
+                player = new Player(username, 1, true);
+                map2.put(username, player);
+                players.put("players", map2);
+                multi.put("isMulti", true);
+                map.put(nom, players);
+                root.updateChildren(map);
+                root.child(nom).updateChildren(multi);
             }
         });
 

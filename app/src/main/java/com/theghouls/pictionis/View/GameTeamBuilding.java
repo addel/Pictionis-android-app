@@ -62,6 +62,7 @@ public class GameTeamBuilding extends AppCompatActivity {
         cursor_team.addChildEventListener(cursor_child_teamListener);
 
         cursor_team.child(active_username).addListenerForSingleValueEvent(new ValueEventListener() {
+
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 active_player = dataSnapshot.getValue(Player.class);
