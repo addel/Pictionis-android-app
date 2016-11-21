@@ -13,7 +13,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/drawing"
-        android:background="@color/common_google_signin_btn_text_dark_default" />
+        android:background="@color/common_google_signin_btn_text_dark_default"
+        android:focusableInTouchMode="true"/>
 
 
     <LinearLayout
@@ -58,9 +59,9 @@
             android:layout_width="@dimen/large_thick"
             android:layout_height="@dimen/large_thick"
             android:background="#FF660000"
+            android:id="@+id/paint_colors1"
             android:layout_margin="2dp"
             android:contentDescription="@string/paint"
-            android:onClick="btnColorClicked"
             android:src="@drawable/color_button"
             android:tag="#FF660000"/>
         <ImageButton
@@ -69,7 +70,7 @@
             android:background="#FF000066"
             android:layout_margin="2dp"
             android:contentDescription="@string/paint"
-            android:onClick="btnColorClicked"
+            android:id="@+id/paint_colors2"
             android:src="@drawable/color_button"
             android:tag="#FF000066"/>
         <ImageButton
@@ -78,7 +79,7 @@
             android:background="#FF076600"
             android:layout_margin="2dp"
             android:contentDescription="@string/paint"
-            android:onClick="btnColorClicked"
+            android:id="@+id/paint_colors3"
             android:src="@drawable/color_button"
             android:tag="#FF076600"/>
         <ImageButton
@@ -87,7 +88,7 @@
             android:background="#fff200"
             android:layout_margin="2dp"
             android:contentDescription="@string/paint"
-            android:onClick="btnColorClicked"
+            android:id="@+id/paint_colors4"
             android:src="@drawable/color_button"
             android:tag="#fff200"/>
         <ImageButton
@@ -96,7 +97,7 @@
             android:background="#FF00B7FF"
             android:layout_margin="2dp"
             android:contentDescription="@string/paint"
-            android:onClick="btnColorClicked"
+            android:id="@+id/paint_colors5"
             android:src="@drawable/color_button"
             android:tag="#FF00B7FF"/>
         <ImageButton
@@ -105,7 +106,7 @@
             android:background="#FFFFFFFF"
             android:layout_margin="2dp"
             android:contentDescription="@string/paint"
-            android:onClick="btnColorClicked"
+            android:id="@+id/paint_colors6"
             android:src="@drawable/color_button"
             android:tag="#FFFFFFFF"/>
         <ImageButton
@@ -114,7 +115,7 @@
             android:background="#FF000000"
             android:layout_margin="2dp"
             android:contentDescription="@string/paint"
-            android:onClick="btnColorClicked"
+            android:id="@+id/paint_colors7"
             android:src="@drawable/color_button"
             android:tag="#FF000000"/>
 
@@ -140,7 +141,8 @@
             android:id="@+id/txtField_response"
             android:layout_toLeftOf="@+id/btn_response"
             android:layout_toStartOf="@+id/btn_response"
-            android:layout_alignTop="@+id/btn_response" />
+            android:layout_alignTop="@+id/btn_response"
+            android:imeOptions="actionUnspecified"/>
 
     </RelativeLayout>
 </FrameLayout>

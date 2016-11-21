@@ -3,7 +3,7 @@ Batman
 Iron-man
 Hara-kiri
 Addel
-Gréco
+Grégo
 Aurel
 G36
 Sphinx
@@ -19,4 +19,3 @@ Golden Gate
 Famas
 Tour Eiffel
 Superman
-
