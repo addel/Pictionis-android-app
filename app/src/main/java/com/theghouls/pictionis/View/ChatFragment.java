@@ -16,6 +16,8 @@ public class ChatFragment extends Fragment {
         // Required empty public constructor
     }
 
+    // un boutton qui clear tout le chat (seulement la textview hein
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

@@ -15,6 +15,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -37,6 +38,7 @@ import java.util.Set;
 
 public class Game extends AppCompatActivity {
 
+    private EditText txtField_response;
     private Toolbar toolbar;
     private TabLayout tabLayout;
     private ViewPager viewPager;
@@ -62,6 +64,8 @@ public class Game extends AppCompatActivity {
         setContentView(R.layout.activity_game);
 
         listOfWord.clear();
+
+        txtField_response = (EditText)findViewById(R.id.txtField_response);
 
         username = getIntent().getExtras().get("username").toString();
         String game_name = getIntent().getExtras().get("game_names").toString();
@@ -113,7 +117,8 @@ public class Game extends AppCompatActivity {
                 boolean isAdminCheck = snap.getValue(Player.class).isAdmin();
                 if (snap.getValue(Player.class).getName().equals(username) && snap.getValue(Player.class).isAdmin()){
                     isAdmin = true;
-
+                }else{
+                    //changeEditText(txtField_response, false);
                 }
                 setPlayer.add(snap.getValue(Player.class));
                 listPlayerName.add(snap.getValue(Player.class).getName());
@@ -207,10 +212,8 @@ public class Game extends AppCompatActivity {
     }
 
     private void changeEditText(EditText editText, boolean isActive){
-        editText.setFocusable(isActive);
         editText.setEnabled(isActive);
         editText.setCursorVisible(isActive);
-        editText.setBackgroundColor(Color.GRAY);
     }
 
     //////////////////////////

@@ -9,14 +9,15 @@ import android.graphics.Path;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.util.TypedValue;
 import android.view.MotionEvent;
 import android.view.View;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.theghouls.pictionis.R;
 
-public class DrawingView extends View {
+public class DrawingView2 extends View {
 
     //////////////////////////////
     /// DECLARATION VARIABLE ////
@@ -41,11 +42,15 @@ public class DrawingView extends View {
 
     private float thick_size, last_thick_size;
 
+    private FirebaseDatabase test = FirebaseDatabase.getInstance();
+    private DatabaseReference retest = test.getReference();
 
 
-    public DrawingView(Context context, AttributeSet attrs) {
+
+    public DrawingView2(Context context, AttributeSet attrs) {
         super(context, attrs);
 
+        //retest.addListenerForSingleValueEvent();
         setupDrawing();
     }
 
@@ -140,7 +145,6 @@ public class DrawingView extends View {
                 break;
             case MotionEvent.ACTION_UP:
                 drawCanvas.drawPath(drawPath, drawPaint);
-
                 drawPath.reset();
                 break;
             default:

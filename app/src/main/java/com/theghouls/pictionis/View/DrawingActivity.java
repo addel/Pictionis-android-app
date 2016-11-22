@@ -59,8 +59,6 @@ public class DrawingActivity extends AppCompatActivity {
         color = (ImageButton)paintLayout.getChildAt(0);
         color.setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.color_button_pressed));
 
-
-
     }
 
     ////////////////

@@ -1,9 +1,7 @@
 package com.theghouls.pictionis.View;
 
 import android.app.Dialog;
-import android.content.Context;
 import android.content.DialogInterface;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
@@ -16,9 +14,8 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
-import com.theghouls.pictionis.R;
 
-import static com.theghouls.pictionis.R.id.txtField_message;
+import com.theghouls.pictionis.R;
 
 public class DrawingFragment extends Fragment implements View.OnClickListener {
 
@@ -27,12 +24,13 @@ public class DrawingFragment extends Fragment implements View.OnClickListener {
     //////////////////
 
     // UI pointer
-    private DrawingView drawView;
+    private DrawingView2 drawView;
 
     private float small_tick, medium_tick, large_tick;
 
     // button pour la couleur du color_button
     private ImageButton color, erasebtn, btn_draw, new_draw_btn;
+
 
     public DrawingFragment() {
 
@@ -50,7 +48,7 @@ public class DrawingFragment extends Fragment implements View.OnClickListener {
 
         View view = inflater.inflate(R.layout.fragment_drawing, container, false);
 
-        drawView = (DrawingView) view.findViewById(R.id.drawing);
+        drawView = (DrawingView2)view.findViewById(R.id.drawing);
         drawView.setThickSize(medium_tick);
 
         erasebtn = (ImageButton)view.findViewById(R.id.btnErase);
@@ -94,6 +92,7 @@ public class DrawingFragment extends Fragment implements View.OnClickListener {
         color = (ImageButton)paintLayout.getChildAt(0);
         color.setImageDrawable(ContextCompat.getDrawable(getActivity(), R.drawable.color_button_pressed));
         // Inflate the layout for this fragment
+
         return view;
     }
 
@@ -241,7 +240,11 @@ public class DrawingFragment extends Fragment implements View.OnClickListener {
                 color=(ImageButton)view;
             }
         }
-
-
     }
+
+    /////////////////
+    ///// HELPER ////
+    ////////////////
+
+
 }
