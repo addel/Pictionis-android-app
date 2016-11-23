@@ -15,7 +15,11 @@ import android.view.View;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.theghouls.pictionis.Model.Drawing;
 import com.theghouls.pictionis.R;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class DrawingView2 extends View {
 
@@ -42,15 +46,15 @@ public class DrawingView2 extends View {
 
     private float thick_size, last_thick_size;
 
-    private FirebaseDatabase test = FirebaseDatabase.getInstance();
-    private DatabaseReference retest = test.getReference();
+
+    private DatabaseReference reGame;
+    private Drawing drawingFirebase;
 
 
 
     public DrawingView2(Context context, AttributeSet attrs) {
         super(context, attrs);
 
-        //retest.addListenerForSingleValueEvent();
         setupDrawing();
     }
 
@@ -71,6 +75,29 @@ public class DrawingView2 extends View {
 
         canvasPaint = new Paint(Paint.DITHER_FLAG);
 
+    }
+
+    public void setupDrawingfromDB(Path drawPath, Paint drawPaint, float thick_size, int paintColor, DatabaseReference reference){
+
+        drawPath = drawPath;
+        drawPaint = drawPaint;
+        thick_size = thick_size;
+        reGame = reference;
+
+        drawPaint.setColor(paintColor);
+        drawPaint.setAntiAlias(true);
+        drawPaint.setStrokeWidth(thick_size);
+
+        canvasPaint = new Paint(Paint.DITHER_FLAG);
+
+    }
+
+    public void setRefGame(DatabaseReference refGame){
+        reGame = refGame;
+    }
+
+    public void setDrawPath(Path draw){
+        drawCanvas.drawPath(draw, drawPaint);
     }
 
     public void setColor(String newColor){
@@ -96,6 +123,7 @@ public class DrawingView2 extends View {
         thick_size=pixelAmount;
         drawPaint.setStrokeWidth(thick_size);
     }
+
 
     public void setLast_thick_size(float lastSize){
         last_thick_size=lastSize;
@@ -145,6 +173,9 @@ public class DrawingView2 extends View {
                 break;
             case MotionEvent.ACTION_UP:
                 drawCanvas.drawPath(drawPath, drawPaint);
+                Map <String, Object> map = new HashMap<String, Object>();
+                map.put("drawing", drawPath);
+                reGame.updateChildren(map);
                 drawPath.reset();
                 break;
             default:
@@ -156,4 +187,9 @@ public class DrawingView2 extends View {
         return true;
 
     }
+
+
+
+
+
 }

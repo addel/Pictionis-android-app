@@ -147,6 +147,10 @@ public class Game extends AppCompatActivity {
     //// HELPER //////
     /////////////////
 
+    public DatabaseReference getReferenceGame(){
+        return root_game;
+    }
+
     private void userChooseWord(){
 
         final String easyWord = generateWord("easyWord.txt");

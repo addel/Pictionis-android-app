@@ -2,6 +2,7 @@ package com.theghouls.pictionis.View;
 
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.graphics.Path;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
@@ -15,7 +16,18 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.ValueEventListener;
+import com.theghouls.pictionis.Model.Drawing;
+import com.theghouls.pictionis.Model.Player;
 import com.theghouls.pictionis.R;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class DrawingFragment extends Fragment implements View.OnClickListener {
 
@@ -30,6 +42,8 @@ public class DrawingFragment extends Fragment implements View.OnClickListener {
 
     // button pour la couleur du color_button
     private ImageButton color, erasebtn, btn_draw, new_draw_btn;
+
+    private DatabaseReference refGame;
 
 
     public DrawingFragment() {
@@ -48,8 +62,13 @@ public class DrawingFragment extends Fragment implements View.OnClickListener {
 
         View view = inflater.inflate(R.layout.fragment_drawing, container, false);
 
+        refGame = ((Game) getActivity()).getReferenceGame();
+        refGame.addValueEventListener(refGameListener);
+
         drawView = (DrawingView2)view.findViewById(R.id.drawing);
         drawView.setThickSize(medium_tick);
+        drawView.setRefGame(refGame);
+
 
         erasebtn = (ImageButton)view.findViewById(R.id.btnErase);
         erasebtn.setOnClickListener(erasebtnListener);
@@ -99,6 +118,21 @@ public class DrawingFragment extends Fragment implements View.OnClickListener {
     ////////////////
     ////LISTENER///
     //////////////
+
+    private ValueEventListener refGameListener = new ValueEventListener() {
+        @Override
+        public void onDataChange(DataSnapshot dataSnapshot) {
+            for(DataSnapshot snap: dataSnapshot.getChildren()){
+                Path draw = snap.child("drawing").getValue(Path.class);
+                drawView.setDrawPath(draw);
+            }
+        }
+
+        @Override
+        public void onCancelled(DatabaseError databaseError) {
+
+        }
+    };
 
     private View.OnClickListener new_draw_btnListener = new View.OnClickListener() {
         @Override
