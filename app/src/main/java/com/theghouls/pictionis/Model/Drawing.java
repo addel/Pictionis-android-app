@@ -11,22 +11,32 @@ import android.graphics.Path;
 
 public class Drawing {
 
-    private Canvas drawCanvas;
-    private Bitmap canvasBitmap;
-    private Paint drawPaint, canvasPaint;
-    private Path drawPath;
-    private int paintColor = 0xFF660000;
+    public Canvas drawCanvas;
+    public Bitmap canvasBitmap;
+    public Paint drawPaint, canvasPaint;
+    public Path drawPath;
+    public int paintColor = 0xFF660000;
+    public String encodedString;
 
     public Drawing() {
     }
 
-    public Drawing(Canvas drawCanvas, Bitmap canvasBitmap, Paint drawPaint, Paint canvasPaint, Path drawPath, int paintColor) {
+    public Drawing(Canvas drawCanvas, Bitmap canvasBitmap, Paint drawPaint, Paint canvasPaint, Path drawPath, int paintColor, String encodedString) {
         this.drawCanvas = drawCanvas;
         this.canvasBitmap = canvasBitmap;
         this.drawPaint = drawPaint;
         this.canvasPaint = canvasPaint;
         this.drawPath = drawPath;
         this.paintColor = paintColor;
+        this.encodedString = encodedString;
+    }
+
+    public String getEncodedString() {
+        return encodedString;
+    }
+
+    public void setEncodedString(String encodedString) {
+        this.encodedString = encodedString;
     }
 
     public Canvas getDrawCanvas() {

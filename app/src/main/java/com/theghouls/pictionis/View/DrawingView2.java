@@ -2,6 +2,7 @@ package com.theghouls.pictionis.View;
 
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -9,6 +10,7 @@ import android.graphics.Path;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.util.AttributeSet;
+import android.util.Base64;
 import android.util.TypedValue;
 import android.view.MotionEvent;
 import android.view.View;
@@ -18,6 +20,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.theghouls.pictionis.Model.Drawing;
 import com.theghouls.pictionis.R;
 
+import java.io.ByteArrayOutputStream;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -99,6 +102,9 @@ public class DrawingView2 extends View {
     public void setDrawPath(Path draw){
         drawCanvas.drawPath(draw, drawPaint);
     }
+    public void setCanvasBitmap(Bitmap bitmap){
+        drawCanvas = new Canvas(bitmap);
+    }
 
     public void setColor(String newColor){
         invalidate();
@@ -173,9 +179,7 @@ public class DrawingView2 extends View {
                 break;
             case MotionEvent.ACTION_UP:
                 drawCanvas.drawPath(drawPath, drawPaint);
-                Map <String, Object> map = new HashMap<String, Object>();
-                map.put("drawing", drawPath);
-                reGame.updateChildren(map);
+                storeBitmap();
                 drawPath.reset();
                 break;
             default:
@@ -186,6 +190,26 @@ public class DrawingView2 extends View {
         invalidate();
         return true;
 
+    }
+
+    private void storeBitmap(){
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        canvasBitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+        byte[] b = baos.toByteArray();
+        String encodeCanvasToString = Base64.encodeToString(b, Base64.DEFAULT);
+
+        Map <String, Object> map = new HashMap<String, Object>();
+        map.put("drawing", encodeCanvasToString);
+        reGame.updateChildren(map);
+
+    }
+
+    protected void retrieveBitmap( String encodedImagesString){
+
+        byte[] byteArray = Base64.decode(encodedImagesString, Base64.DEFAULT);
+        Bitmap b = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
+        Bitmap mutableBitmap = b.copy(Bitmap.Config.ARGB_8888, true);
+        drawCanvas = new Canvas(mutableBitmap);
     }
 
 

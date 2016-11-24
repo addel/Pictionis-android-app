@@ -2,11 +2,13 @@ package com.theghouls.pictionis.View;
 
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.graphics.Bitmap;
 import android.graphics.Path;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +21,7 @@ import android.widget.LinearLayout;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.theghouls.pictionis.Model.Drawing;
 import com.theghouls.pictionis.Model.Player;
@@ -28,6 +31,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import static android.R.attr.value;
 
 public class DrawingFragment extends Fragment implements View.OnClickListener {
 
@@ -62,6 +67,7 @@ public class DrawingFragment extends Fragment implements View.OnClickListener {
 
         View view = inflater.inflate(R.layout.fragment_drawing, container, false);
 
+        refGame = FirebaseDatabase.getInstance().getReference();
         refGame = ((Game) getActivity()).getReferenceGame();
         refGame.addValueEventListener(refGameListener);
 
@@ -112,6 +118,7 @@ public class DrawingFragment extends Fragment implements View.OnClickListener {
         color.setImageDrawable(ContextCompat.getDrawable(getActivity(), R.drawable.color_button_pressed));
         // Inflate the layout for this fragment
 
+
         return view;
     }
 
@@ -122,10 +129,17 @@ public class DrawingFragment extends Fragment implements View.OnClickListener {
     private ValueEventListener refGameListener = new ValueEventListener() {
         @Override
         public void onDataChange(DataSnapshot dataSnapshot) {
-            for(DataSnapshot snap: dataSnapshot.getChildren()){
-                Path draw = snap.child("drawing").getValue(Path.class);
-                drawView.setDrawPath(draw);
+            String str = null;
+            try {
+                str = (String) dataSnapshot.child("drawing").getValue();
+                drawView.retrieveBitmap(str);
+            }catch (Exception e){
+                Log.d("drawing", e.toString());
             }
+
+
+
+            Log.i("drawing", str);
         }
 
         @Override
