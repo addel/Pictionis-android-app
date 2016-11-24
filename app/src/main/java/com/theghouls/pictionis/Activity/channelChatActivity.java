@@ -1,9 +1,8 @@
-package com.theghouls.pictionis.View;
+package com.theghouls.pictionis.Activity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -25,12 +24,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
-import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 import java.util.Set;
 
-public class channelChatActivity extends AppCompatActivity {
+public class ChannelChatActivity extends AppCompatActivity {
 
     // UI
     private Button add_channel_btn;
@@ -131,7 +128,7 @@ public class channelChatActivity extends AppCompatActivity {
     private AdapterView.OnItemClickListener listViewItemListener = new AdapterView.OnItemClickListener() {
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-            Intent intent = new Intent(channelChatActivity.this, ChatActivity.class);
+            Intent intent = new Intent(ChannelChatActivity.this, ChatActivity.class);
             intent.putExtra("username", username);
             intent.putExtra("channel_name", ((TextView) view).getText().toString());
             startActivity(intent);

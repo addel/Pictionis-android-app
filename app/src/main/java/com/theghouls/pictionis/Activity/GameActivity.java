@@ -1,4 +1,4 @@
-package com.theghouls.pictionis.View;
+package com.theghouls.pictionis.Activity;
 
 import android.content.DialogInterface;
 import android.graphics.Color;
@@ -24,6 +24,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.theghouls.pictionis.Model.Player;
 import com.theghouls.pictionis.R;
+import com.theghouls.pictionis.View.ChatFragment;
+import com.theghouls.pictionis.View.DrawingFragment;
+import com.theghouls.pictionis.View.MyViewPager;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -36,7 +39,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-public class Game extends AppCompatActivity {
+public class GameActivity extends AppCompatActivity {
 
     private EditText txtField_response;
     private Toolbar toolbar;
@@ -88,7 +91,7 @@ public class Game extends AppCompatActivity {
             }
         });
 
-        viewPager = (ViewPager) findViewById(R.id.viewpager);
+        viewPager = (MyViewPager) findViewById(R.id.viewpager);
         setupViewPager(viewPager);
 
         tabLayout = (TabLayout) findViewById(R.id.tabs);
@@ -258,5 +261,7 @@ public class Game extends AppCompatActivity {
         public CharSequence getPageTitle(int position) {
             return mFragmentTitleList.get(position);
         }
+
+
     }
 }

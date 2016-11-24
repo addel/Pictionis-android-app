@@ -1,29 +1,20 @@
-package com.theghouls.pictionis.View;
+package com.theghouls.pictionis.Activity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -32,16 +23,14 @@ import com.google.firebase.database.ValueEventListener;
 import com.theghouls.pictionis.Model.Player;
 import com.theghouls.pictionis.R;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-public class GamesList extends AppCompatActivity {
+public class GamesListActivity extends AppCompatActivity {
 
     private ArrayAdapter<String> arrayAdapter;
     private ArrayList<String> list_channel = new ArrayList<>();
@@ -103,9 +92,9 @@ public class GamesList extends AppCompatActivity {
 
                     Intent intent;
                     if(isMulti){
-                        intent = new Intent(GamesList.this, GameTeamBuilding.class);
+                        intent = new Intent(GamesListActivity.this, GameTeamBuildingActivity.class);
                     }else{
-                        intent = new Intent(GamesList.this, Game.class);
+                        intent = new Intent(GamesListActivity.this, GameActivity.class);
                     }
 
                     intent.putExtra("username", username);

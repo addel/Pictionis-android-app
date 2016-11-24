@@ -2,6 +2,7 @@ package com.theghouls.pictionis.View;
 
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -9,12 +10,19 @@ import android.graphics.Path;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.util.AttributeSet;
-import android.util.Log;
+import android.util.Base64;
 import android.util.TypedValue;
 import android.view.MotionEvent;
 import android.view.View;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.theghouls.pictionis.Model.Drawing;
 import com.theghouls.pictionis.R;
+
+import java.io.ByteArrayOutputStream;
+import java.util.HashMap;
+import java.util.Map;
 
 public class DrawingView extends View {
 
@@ -38,8 +46,11 @@ public class DrawingView extends View {
     private int paintColor = 0xFF660000;
 
     private boolean erase = false;
-
     private float thick_size, last_thick_size;
+
+
+    private DatabaseReference reGame;
+    private boolean isRealtime = false;
 
 
 
@@ -68,6 +79,32 @@ public class DrawingView extends View {
 
     }
 
+    public void setupDrawingfromDB(Path drawPath, Paint drawPaint, float thick_size, int paintColor, DatabaseReference reference){
+
+        drawPath = drawPath;
+        drawPaint = drawPaint;
+        thick_size = thick_size;
+        reGame = reference;
+
+        drawPaint.setColor(paintColor);
+        drawPaint.setAntiAlias(true);
+        drawPaint.setStrokeWidth(thick_size);
+
+        canvasPaint = new Paint(Paint.DITHER_FLAG);
+
+    }
+
+    public void setRefGame(DatabaseReference refGame){
+        reGame = refGame;
+    }
+
+    public void setDrawPath(Path draw){
+        drawCanvas.drawPath(draw, drawPaint);
+    }
+    public void setCanvasBitmap(Bitmap bitmap){
+        drawCanvas = new Canvas(bitmap);
+    }
+
     public void setColor(String newColor){
         invalidate();
 
@@ -91,6 +128,7 @@ public class DrawingView extends View {
         thick_size=pixelAmount;
         drawPaint.setStrokeWidth(thick_size);
     }
+
 
     public void setLast_thick_size(float lastSize){
         last_thick_size=lastSize;
@@ -140,7 +178,8 @@ public class DrawingView extends View {
                 break;
             case MotionEvent.ACTION_UP:
                 drawCanvas.drawPath(drawPath, drawPaint);
-
+                if (isRealtime)
+                    storeBitmap();
                 drawPath.reset();
                 break;
             default:
@@ -152,4 +191,39 @@ public class DrawingView extends View {
         return true;
 
     }
+
+    private void storeBitmap(){
+
+        Bitmap newBitmap = Bitmap.createBitmap(canvasBitmap.getWidth(), canvasBitmap.getHeight(), canvasBitmap.getConfig());
+        Canvas canvas = new Canvas(newBitmap);
+        canvas.drawColor(Color.WHITE);
+        canvas.drawBitmap(canvasBitmap, 0, 0, null);
+
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        newBitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+        byte[] b = baos.toByteArray();
+        String encodeCanvasToString = Base64.encodeToString(b, Base64.NO_WRAP);
+
+        Map <String, Object> map = new HashMap<String, Object>();
+        map.put("drawing", encodeCanvasToString);
+        reGame.updateChildren(map);
+
+    }
+
+    protected void retrieveBitmap( String encodedImagesString){
+
+        byte[] byteArray = Base64.decode(encodedImagesString, Base64.NO_WRAP);
+        Bitmap b = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
+        Bitmap mutableBitmap = b.copy(Bitmap.Config.ARGB_8888, true);
+        drawCanvas.drawBitmap(mutableBitmap, 0, 0, null);
+    }
+
+    public void setRealTime(boolean b) {
+        isRealtime = b;
+    }
+
+
+
+
+
 }

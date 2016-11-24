@@ -17,7 +17,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".View.MainActivity"
+            android:name=".Activity.MainActivity"
             android:icon="@drawable/ic_pictionislogo"
             android:uiOptions="splitActionBarWhenNarrow">
             <intent-filter>
@@ -27,42 +27,42 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".View.registerActivity"
+            android:name=".Activity.RegisterActivity"
             android:label="@string/btnRegisterTitle" />
         <activity
-            android:name=".View.LoginActivity"
+            android:name=".Activity.LoginActivity"
             android:label="@string/title_activity_login" />
         <activity
-            android:name=".View.DrawingActivity"
+            android:name=".Activity.DrawingActivity"
             android:label="@string/drawing_view_title">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".View.MainActivity" />
+                android:value=".Activity.MainActivity" />
         </activity>
-        <activity android:name=".View.ChatActivity">
+        <activity android:name=".Activity.ChatActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".View.channelChatActivity" />
+                android:value=".Activity.ChannelChatActivity" />
         </activity>
-        <activity android:name=".View.channelChatActivity">
+        <activity android:name=".Activity.ChannelChatActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".View.MainActivity" />
+                android:value=".Activity.MainActivity" />
         </activity>
         <activity
-            android:name=".View.GamesList"
+            android:name=".Activity.GamesListActivity"
             android:label="@string/title_activity_games_list"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".View.MainActivity" />
+                android:value=".Activity.MainActivity" />
         </activity>
-        <activity android:name=".View.GameTeamBuilding">
+        <activity android:name=".Activity.GameTeamBuildingActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".View.MainActivity" />
+                android:value=".Activity.MainActivity" />
         </activity>
-        <activity android:name=".View.Game"></activity>
+        <activity android:name=".Activity.GameActivity"></activity>
     </application>
 
 </manifest>

@@ -2,8 +2,6 @@ package com.theghouls.pictionis.View;
 
 import android.app.Dialog;
 import android.content.DialogInterface;
-import android.graphics.Bitmap;
-import android.graphics.Path;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
@@ -23,16 +21,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.theghouls.pictionis.Model.Drawing;
-import com.theghouls.pictionis.Model.Player;
+import com.theghouls.pictionis.Activity.GameActivity;
 import com.theghouls.pictionis.R;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import static android.R.attr.value;
 
 public class DrawingFragment extends Fragment implements View.OnClickListener {
 
@@ -41,7 +31,7 @@ public class DrawingFragment extends Fragment implements View.OnClickListener {
     //////////////////
 
     // UI pointer
-    private DrawingView2 drawView;
+    private DrawingView drawView;
 
     private float small_tick, medium_tick, large_tick;
 
@@ -68,12 +58,13 @@ public class DrawingFragment extends Fragment implements View.OnClickListener {
         View view = inflater.inflate(R.layout.fragment_drawing, container, false);
 
         refGame = FirebaseDatabase.getInstance().getReference();
-        refGame = ((Game) getActivity()).getReferenceGame();
+        refGame = ((GameActivity) getActivity()).getReferenceGame();
         refGame.addValueEventListener(refGameListener);
 
-        drawView = (DrawingView2)view.findViewById(R.id.drawing);
+        drawView = (DrawingView)view.findViewById(R.id.drawing);
         drawView.setThickSize(medium_tick);
         drawView.setRefGame(refGame);
+        drawView.setRealTime(true);
 
 
         erasebtn = (ImageButton)view.findViewById(R.id.btnErase);
@@ -136,9 +127,6 @@ public class DrawingFragment extends Fragment implements View.OnClickListener {
             }catch (Exception e){
                 Log.d("drawing", e.toString());
             }
-
-
-
             Log.i("drawing", str);
         }
 

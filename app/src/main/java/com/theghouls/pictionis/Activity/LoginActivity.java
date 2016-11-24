@@ -1,4 +1,4 @@
-package com.theghouls.pictionis.View;
+package com.theghouls.pictionis.Activity;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -46,7 +46,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static android.Manifest.permission.READ_CONTACTS;
-import static android.content.Context.CONNECTIVITY_SERVICE;
 
 public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<Cursor> {
 
@@ -154,7 +153,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     private View.OnClickListener registerButtonListerner = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            startActivity(new Intent(LoginActivity.this, registerActivity.class));
+            startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
         }
     };
 

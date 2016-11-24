@@ -1,4 +1,4 @@
-package com.theghouls.pictionis.View;
+package com.theghouls.pictionis.Activity;
 
 import android.app.Dialog;
 import android.content.DialogInterface;
@@ -6,13 +6,12 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
 import com.theghouls.pictionis.R;
+import com.theghouls.pictionis.View.DrawingView;
 
 public class DrawingActivity extends AppCompatActivity {
 
@@ -37,6 +36,7 @@ public class DrawingActivity extends AppCompatActivity {
 
         drawView = (DrawingView)findViewById(R.id.drawing);
         drawView.setThickSize(medium_tick);
+        drawView.setRealTime(false);
 
         erasebtn = (ImageButton)findViewById(R.id.btnErase);
         erasebtn.setOnClickListener(erasebtnListener);

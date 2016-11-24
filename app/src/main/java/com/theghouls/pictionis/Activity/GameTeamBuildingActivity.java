@@ -1,4 +1,4 @@
-package com.theghouls.pictionis.View;
+package com.theghouls.pictionis.Activity;
 
 import android.content.DialogInterface;
 import android.renderscript.Sampler;
@@ -31,7 +31,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-public class GameTeamBuilding extends AppCompatActivity {
+public class GameTeamBuildingActivity extends AppCompatActivity {
 
     private ArrayList<Player> active_list_player;
     // Firebase database ref
