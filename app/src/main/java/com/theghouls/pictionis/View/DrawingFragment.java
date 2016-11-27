@@ -3,6 +3,8 @@ package com.theghouls.pictionis.View;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
@@ -24,6 +26,12 @@ import com.google.firebase.database.ValueEventListener;
 import com.theghouls.pictionis.Activity.GameActivity;
 import com.theghouls.pictionis.R;
 
+import java.util.HashMap;
+import java.util.Objects;
+
+import static android.support.design.R.styleable.CoordinatorLayout;
+
+
 public class DrawingFragment extends Fragment implements View.OnClickListener {
 
     //////////////////
@@ -39,6 +47,8 @@ public class DrawingFragment extends Fragment implements View.OnClickListener {
     private ImageButton color, erasebtn, btn_draw, new_draw_btn;
 
     private DatabaseReference refGame;
+    private String username;
+    private boolean isAdmin;
 
 
     public DrawingFragment() {
@@ -96,10 +106,15 @@ public class DrawingFragment extends Fragment implements View.OnClickListener {
         btn_color7.setOnClickListener(this);
 
 
+        isAdmin = getArguments().getBoolean("isAdmin");
+        username = getArguments().getString("username");
+
         Button btn_response = (Button) view.findViewById(R.id.btn_response);
-        EditText txtField_response = (EditText)view.findViewById(R.id.txtField_response);
-
-
+        btn_response.setOnClickListener(btn_responseListener);
+        if (isAdmin)
+            btn_response.setEnabled(false);
+        else
+            btn_response.setEnabled(true);
 
         // ici on a la barre des button de couleur
         LinearLayout paintLayout = (LinearLayout)view.findViewById(R.id.paint_colors);
@@ -109,13 +124,19 @@ public class DrawingFragment extends Fragment implements View.OnClickListener {
         color.setImageDrawable(ContextCompat.getDrawable(getActivity(), R.drawable.color_button_pressed));
         // Inflate the layout for this fragment
 
-
         return view;
     }
 
     ////////////////
     ////LISTENER///
     //////////////
+
+    private View.OnClickListener btn_responseListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            request_response();
+        }
+    };
 
     private ValueEventListener refGameListener = new ValueEventListener() {
         @Override
@@ -127,7 +148,29 @@ public class DrawingFragment extends Fragment implements View.OnClickListener {
             }catch (Exception e){
                 Log.d("drawing", e.toString());
             }
-            Log.i("drawing", str);
+
+            String word = null;
+            try {
+                word = (String) dataSnapshot.child("wordPropo").getValue();
+                if(word != null){
+                    Snackbar snack = Snackbar.make(drawView,"réponse proposé par "+ username +": "+ word, Snackbar.LENGTH_LONG);
+                    snack.show();
+                }
+                dataSnapshot.child("wordPropo").getRef().setValue(null);
+            }catch (Exception e){
+                Log.d("word", e.toString());
+            }
+
+            boolean win = false;
+            try {
+                win = (boolean) dataSnapshot.child("win").getValue();
+                if(word != null){
+                    congrat();
+                }
+                dataSnapshot.child("win").getRef().setValue(null);
+            }catch (Exception e){
+                Log.d("word", e.toString());
+            }
         }
 
         @Override
@@ -257,10 +300,13 @@ public class DrawingFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
-        if (view.getId() == R.id.paint_colors1 || view.getId() == R.id.paint_colors2 || view.getId() == R.id.paint_colors3 || view.getId() == R.id.paint_colors4 || view.getId() == R.id.paint_colors5 || view.getId() == R.id.paint_colors6 || view.getId() == R.id.paint_colors7){
+
+        if (view.getId() == R.id.paint_colors1 || view.getId() == R.id.paint_colors2 || view.getId() == R.id.paint_colors3 || view.getId() == R.id.paint_colors4 || view.getId() == R.id.paint_colors5 || view.getId() == R.id.paint_colors6 || view.getId() == R.id.paint_colors7)
+        {
 
             drawView.setErase(false);
             drawView.setThickSize(drawView.getLast_thick_size());
+
             if(view!=color){
 
                 // on get la color depuis le bouton clicker (je rappel que en mobile le master object est View donc un ImageButton est aussi une View
@@ -282,5 +328,63 @@ public class DrawingFragment extends Fragment implements View.OnClickListener {
     ///// HELPER ////
     ////////////////
 
+    private void request_response(){
+        final EditText edittext = new EditText(getContext());
 
+        LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.MATCH_PARENT);
+        edittext.setLayoutParams(lp);
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+
+        builder.setTitle("Proposer un mot");
+        builder.setIcon(R.drawable.ic_pictionislogo);
+
+        builder.setView(edittext);
+
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+                final String wordy = edittext.getText().toString().trim();
+                HashMap<String, Object> map = new HashMap<String, Object>();
+                map.put("wordPropo", wordy);
+                refGame.updateChildren(map);
+            }
+        });
+
+        builder.setNegativeButton("Annuler", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+                dialog.cancel();
+
+            }
+        });
+
+        builder.show();
+
+    }
+
+    private void congrat(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+
+        builder.setTitle("Gagné !!!!");
+        builder.setMessage("Vous avez gagné !!! Bravo !!! On recommence ?");
+        builder.setIcon(R.drawable.ic_pictionislogo);
+
+        builder.setPositiveButton("OUI", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+                if (isAdmin){
+                    ((GameActivity) getActivity()).userChooseWord();
+                }
+            }
+        });
+
+        builder.setNegativeButton("NON", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+                dialog.cancel();
+
+            }
+        });
+
+        builder.show();
+    }
 }

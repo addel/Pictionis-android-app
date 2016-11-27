@@ -88,8 +88,8 @@ public class GamesListActivity extends AppCompatActivity {
             rootGame.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
-                    isMulti = (boolean) dataSnapshot.getValue();
 
+                    isMulti = (boolean) dataSnapshot.getValue();
                     Intent intent;
                     if(isMulti){
                         intent = new Intent(GamesListActivity.this, GameTeamBuildingActivity.class);

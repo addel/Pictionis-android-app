@@ -122,27 +122,15 @@
     </LinearLayout>
 
         <Button
-            android:text="Valider"
+            android:text="Proposer une reponse"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
-            android:id="@+id/btn_response" />
-
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:ems="10"
-            android:layout_alignParentBottom="true"
+            android:id="@+id/btn_response"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:id="@+id/txtField_response"
-            android:layout_toLeftOf="@+id/btn_response"
-            android:layout_toStartOf="@+id/btn_response"
-            android:layout_alignTop="@+id/btn_response"
-            android:imeOptions="actionUnspecified"/>
+            android:layout_alignParentStart="true" />
 
     </RelativeLayout>
 </FrameLayout>

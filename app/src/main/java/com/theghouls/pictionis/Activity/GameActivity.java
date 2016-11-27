@@ -1,7 +1,6 @@
 package com.theghouls.pictionis.Activity;
 
 import android.content.DialogInterface;
-import android.graphics.Color;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -11,11 +10,8 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
-import android.view.View;
 import android.widget.EditText;
-import android.widget.LinearLayout;
-import android.widget.TextView;
+
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -31,10 +27,10 @@ import com.theghouls.pictionis.View.MyViewPager;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.text.Collator;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -68,19 +64,26 @@ public class GameActivity extends AppCompatActivity {
 
         listOfWord.clear();
 
-        txtField_response = (EditText)findViewById(R.id.txtField_response);
-
         username = getIntent().getExtras().get("username").toString();
         String game_name = getIntent().getExtras().get("game_names").toString();
 
         root_game_player = database.getReference().child("Games_list").child(game_name).child("players");
-        root_game_player.addValueEventListener(root_gameListener);
+        root_game_player.addValueEventListener(root_gamePlayerListener);
 
         root_game = database.getReference().child("Games_list").child(game_name);
         root_game.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                if(dataSnapshot.child("word").getValue() == null){
+
+                for (DataSnapshot snapshot: dataSnapshot.child("players").getChildren()){
+                    if (snapshot.getValue(Player.class).getName().equals(username) && snapshot.getValue(Player.class).isAdmin()){
+                        isAdmin = true;
+                    }else{
+                        isAdmin = false;
+                    }
+                }
+
+                if(dataSnapshot.child("word").getValue() == null && isAdmin){
                     userChooseWord();
                 }
             }
@@ -109,20 +112,13 @@ public class GameActivity extends AppCompatActivity {
     ///// LISTENER ////
     ///////////////////
 
-    private ValueEventListener root_gameListener = new ValueEventListener() {
+    private ValueEventListener root_gamePlayerListener = new ValueEventListener() {
         @Override
         public void onDataChange(DataSnapshot dataSnapshot) {
 
             List<String> listPlayerName = new ArrayList<>();
 
             for(DataSnapshot snap: dataSnapshot.getChildren()){
-                String name = snap.getValue(Player.class).getName();
-                boolean isAdminCheck = snap.getValue(Player.class).isAdmin();
-                if (snap.getValue(Player.class).getName().equals(username) && snap.getValue(Player.class).isAdmin()){
-                    isAdmin = true;
-                }else{
-                    //changeEditText(txtField_response, false);
-                }
                 setPlayer.add(snap.getValue(Player.class));
                 listPlayerName.add(snap.getValue(Player.class).getName());
             }
@@ -154,7 +150,7 @@ public class GameActivity extends AppCompatActivity {
         return root_game;
     }
 
-    private void userChooseWord(){
+    public void userChooseWord(){
 
         final String easyWord = generateWord("easyWord.txt");
         final String mediumWord = generateWord("mediumWord.txt");
@@ -184,6 +180,19 @@ public class GameActivity extends AppCompatActivity {
         });
 
         builder.show();
+    }
+
+    private void checkword(String wd){
+        final Collator instance = Collator.getInstance();
+
+        // This strategy mean it'll ignore the accents
+        instance.setStrength(Collator.NO_DECOMPOSITION);
+
+        if(instance.compare(wd, word) == 0){
+            HashMap<String, Object> map = new HashMap<>();
+            map.put("win", true);
+            root_game.updateChildren(map);
+        }
     }
 
     private void registerWordAndPoint(String word, int point){
@@ -218,19 +227,28 @@ public class GameActivity extends AppCompatActivity {
 
     }
 
-    private void changeEditText(EditText editText, boolean isActive){
-        editText.setEnabled(isActive);
-        editText.setCursorVisible(isActive);
-    }
-
     //////////////////////////
     //// Fragment + pager ////
     //////////////////////////
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new DrawingFragment(), "DESSIN");
-        adapter.addFragment(new ChatFragment(), "CHAT");
+
+        Bundle bundle = new Bundle();
+        bundle.putBoolean("isadmin", isAdmin);
+        bundle.putString("username", username);
+        DrawingFragment fragobj = new DrawingFragment();
+        fragobj.setArguments(bundle);
+
+        Bundle bundleChat = new Bundle();
+        bundleChat.putString("username", username);
+        ChatFragment fragobjChat = new ChatFragment();
+        fragobjChat.setArguments(bundleChat);
+
+
+
+        adapter.addFragment(fragobj, "DESSIN");
+        adapter.addFragment(fragobjChat, "CHAT");
         viewPager.setAdapter(adapter);
     }
 

@@ -84,6 +84,8 @@ public class MainActivity extends AppCompatActivity {
     private View.OnClickListener btn_chatActivityListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
+            if(username == null)
+                user_name_alert();
             Intent intent = new Intent(MainActivity.this, ChannelChatActivity.class);
             intent.putExtra("username", username);
             startActivity(intent);
@@ -93,6 +95,8 @@ public class MainActivity extends AppCompatActivity {
     private View.OnClickListener btn_pictionisListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
+            if(username == null)
+                user_name_alert();
             Intent intent = new Intent(MainActivity.this, GamesListActivity.class);
             intent.putExtra("username", username);
             startActivity(intent);
