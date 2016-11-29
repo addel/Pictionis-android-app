@@ -83,7 +83,9 @@ public class GameActivity extends AppCompatActivity {
                     }
                 }
 
-                if(dataSnapshot.child("word").getValue() == null && isAdmin){
+                word = (String) dataSnapshot.child("word").getValue();
+
+                if(word == null && isAdmin){
                     userChooseWord();
                 }
             }
@@ -182,22 +184,23 @@ public class GameActivity extends AppCompatActivity {
         builder.show();
     }
 
-    private void checkword(String wd){
+    public void checkword(String wd){
         final Collator instance = Collator.getInstance();
 
         // This strategy mean it'll ignore the accents
         instance.setStrength(Collator.NO_DECOMPOSITION);
 
-        if(instance.compare(wd, word) == 0){
+        if(instance.compare(wd.toLowerCase(), word.toLowerCase()) == 0){
             HashMap<String, Object> map = new HashMap<>();
             map.put("win", true);
             root_game.updateChildren(map);
         }
     }
 
-    private void registerWordAndPoint(String word, int point){
+    private void registerWordAndPoint(String word_r, int point){
         Map <String, Object> map = new HashMap<String, Object>();
-        map.put("word", word);
+        word = word_r;
+        map.put("word", word_r);
         root_game.updateChildren(map);
         map.clear();
         map.put("pointForWord", point);

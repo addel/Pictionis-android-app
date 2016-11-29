@@ -163,11 +163,11 @@ public class DrawingFragment extends Fragment implements View.OnClickListener {
 
             boolean win = false;
             try {
+                String playerPropo = (String) dataSnapshot.child("playerPropo").getValue();
                 win = (boolean) dataSnapshot.child("win").getValue();
-                if(word != null){
-                    congrat();
+                if(win){
+                    congrat(playerPropo);
                 }
-                dataSnapshot.child("win").getRef().setValue(null);
             }catch (Exception e){
                 Log.d("word", e.toString());
             }
@@ -348,7 +348,14 @@ public class DrawingFragment extends Fragment implements View.OnClickListener {
                 final String wordy = edittext.getText().toString().trim();
                 HashMap<String, Object> map = new HashMap<String, Object>();
                 map.put("wordPropo", wordy);
+
+                HashMap<String, Object> map2 = new HashMap<String, Object>();
+                map.put("playerPropo", username);
+
                 refGame.updateChildren(map);
+                refGame.updateChildren(map2);
+
+                ((GameActivity) getActivity()).checkword(wordy);
             }
         });
 
@@ -363,28 +370,18 @@ public class DrawingFragment extends Fragment implements View.OnClickListener {
 
     }
 
-    private void congrat(){
+    private void congrat(String usr){
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
 
         builder.setTitle("Gagné !!!!");
-        builder.setMessage("Vous avez gagné !!! Bravo !!! On recommence ?");
+        builder.setMessage("Le player "+ usr +" gagné !!! Bravo !!!");
         builder.setIcon(R.drawable.ic_pictionislogo);
 
-        builder.setPositiveButton("OUI", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int whichButton) {
-                if (isAdmin){
-                    ((GameActivity) getActivity()).userChooseWord();
-                }
-            }
-        });
-
-        builder.setNegativeButton("NON", new DialogInterface.OnClickListener() {
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int whichButton) {
                 dialog.cancel();
-
             }
         });
-
         builder.show();
     }
 }

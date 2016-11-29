@@ -59,7 +59,7 @@ public class GameTeamBuildingActivity extends AppCompatActivity {
         cursor.addChildEventListener(cursor_childListener);
 
         cursor_team = FirebaseDatabase.getInstance().getReference().child("Games_list").child(active_name_game).child("players");
-        cursor_team.addChildEventListener(cursor_child_teamListener);
+        cursor_team.addValueEventListener(cursor_child_teamListener);
 
         cursor_team.child(active_username).addListenerForSingleValueEvent(new ValueEventListener() {
 
@@ -73,8 +73,6 @@ public class GameTeamBuildingActivity extends AppCompatActivity {
 
             }
         });
-       // active_player = (Player)cursor_team.child(active_username).getRef() != null ? (Player)getIntent().getExtras().getSerializable("player") : new Player(active_username, 2, false);;
-
 
         // set titre de la view
         setTitle("Partie: "+ active_name_game);
@@ -133,50 +131,24 @@ public class GameTeamBuildingActivity extends AppCompatActivity {
         }
     };
 
-    private ChildEventListener cursor_child_teamListener = new ChildEventListener() {
-        @Override
-        public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+    private ValueEventListener cursor_child_teamListener = new ValueEventListener() {
 
+        @Override
+        public void onDataChange(DataSnapshot dataSnapshot) {
             String tmp = team1_txtfield.getText().toString().replace(active_username +  "\n", "");
             String tmp2 = team2_txtfield.getText().toString().replace(active_username +  "\n", "");
 
             team1_txtfield.setText(tmp);
             team2_txtfield.setText(tmp2);
 
-            if (String.valueOf(dataSnapshot.child("team").getValue()) == "1"){
+            int team = (int) dataSnapshot.child("child").getValue();
+
+            if (team == 1){
 
                 team1_txtfield.append(active_username +  "\n");
             }else{
                 team2_txtfield.append(active_username +  "\n");
             }
-
-
-        }
-
-        @Override
-        public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-            String tmp = team1_txtfield.getText().toString().replace(active_username +  "\n", "");
-            String tmp2 = team2_txtfield.getText().toString().replace(active_username +  "\n", "");
-
-            team1_txtfield.setText(tmp);
-            team2_txtfield.setText(tmp2);
-
-            if (String.valueOf(dataSnapshot.child("team").getValue()) == "1"){
-
-                team1_txtfield.append(active_username +  "\n");
-            }else{
-                team2_txtfield.append(active_username +  "\n");
-            }
-        }
-
-        @Override
-        public void onChildRemoved(DataSnapshot dataSnapshot) {
-
-        }
-
-        @Override
-        public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-
         }
 
         @Override

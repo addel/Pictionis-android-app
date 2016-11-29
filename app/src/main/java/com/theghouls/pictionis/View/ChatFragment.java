@@ -1,6 +1,10 @@
 package com.theghouls.pictionis.View;
 
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -18,12 +22,15 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.theghouls.pictionis.Activity.ChatActivity;
 import com.theghouls.pictionis.Activity.GameActivity;
 import com.theghouls.pictionis.R;
 
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
+
+import static android.content.Context.NOTIFICATION_SERVICE;
 
 public class ChatFragment extends Fragment {
 
@@ -77,6 +84,7 @@ public class ChatFragment extends Fragment {
                 chat_username = (String)(((DataSnapshot) i.next()).getValue());
 
                 txtView_message.append(chat_username + ":" + chat_message + "\n");
+                createNotification(chat_message);
             }
 
         }
@@ -120,4 +128,24 @@ public class ChatFragment extends Fragment {
 
         }
     };
+
+    /////////////////
+    /// HELPER /////
+    ////////////////
+
+    private void createNotification(String message) {
+
+        Intent intent = new Intent(getActivity(), GameActivity.class);
+        PendingIntent pIntent = PendingIntent.getActivity(getContext(), (int) System.currentTimeMillis(), intent, 0);
+
+        Notification noti = new Notification.Builder(getContext())
+                .setContentTitle("Channel: "+chat_username+" => Message de" + active_username)
+                .setContentText(message).setSmallIcon(R.drawable.common_google_signin_btn_icon_light)
+                .setContentIntent(pIntent).build();
+        NotificationManager notificationManager = (NotificationManager) getActivity().getSystemService(NOTIFICATION_SERVICE);
+        noti.flags |= Notification.FLAG_AUTO_CANCEL;
+
+        notificationManager.notify(0, noti);
+
+    }
 }

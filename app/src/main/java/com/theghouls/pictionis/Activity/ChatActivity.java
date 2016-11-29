@@ -1,5 +1,9 @@
 package com.theghouls.pictionis.Activity;
 
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -87,6 +91,7 @@ public class ChatActivity extends AppCompatActivity {
                 chat_username = (String)(((DataSnapshot) i.next()).getValue());
 
                 txtView_message.append(chat_username + ":" + chat_message + "\n");
+                createNotification(chat_message);
             }
 
         }
@@ -111,4 +116,25 @@ public class ChatActivity extends AppCompatActivity {
 
         }
     };
+
+
+    /////////////////
+    /// HELPER /////
+    ////////////////
+
+    private void createNotification(String message) {
+
+        Intent intent = new Intent(this, ChatActivity.class);
+        PendingIntent pIntent = PendingIntent.getActivity(this, (int) System.currentTimeMillis(), intent, 0);
+
+        Notification noti = new Notification.Builder(this)
+                .setContentTitle("Channel: "+chat_username+" => Message de" + active_username)
+                .setContentText(message).setSmallIcon(R.drawable.common_google_signin_btn_icon_light)
+                .setContentIntent(pIntent).build();
+        NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        noti.flags |= Notification.FLAG_AUTO_CANCEL;
+
+        notificationManager.notify(0, noti);
+
+    }
 }

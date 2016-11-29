@@ -216,6 +216,8 @@ public class DrawingView extends View {
         Bitmap b = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
         Bitmap mutableBitmap = b.copy(Bitmap.Config.ARGB_8888, true);
         drawCanvas.drawBitmap(mutableBitmap, 0, 0, null);
+        invalidate();
+
     }
 
     public void setRealTime(boolean b) {
