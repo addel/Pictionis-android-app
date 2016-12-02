@@ -58,10 +58,10 @@ public class GameTeamBuildingActivity extends AppCompatActivity {
         cursor = FirebaseDatabase.getInstance().getReference().child("Games_list").child(active_name_game).child("chat");
         cursor.addChildEventListener(cursor_childListener);
 
-        cursor_team = FirebaseDatabase.getInstance().getReference().child("Games_list").child(active_name_game).child("players");
+        cursor_team = FirebaseDatabase.getInstance().getReference().child("Games_list").child(active_name_game).child("players").child(active_username);
         cursor_team.addValueEventListener(cursor_child_teamListener);
 
-        cursor_team.child(active_username).addListenerForSingleValueEvent(new ValueEventListener() {
+        cursor_team.addListenerForSingleValueEvent(new ValueEventListener() {
 
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -76,7 +76,6 @@ public class GameTeamBuildingActivity extends AppCompatActivity {
 
         // set titre de la view
         setTitle("Partie: "+ active_name_game);
-
 
         Button btn_send_game = (Button) findViewById(R.id.btn_send_game);
         Button btn_join_team = (Button) findViewById(R.id.join_game_btn);
@@ -141,13 +140,18 @@ public class GameTeamBuildingActivity extends AppCompatActivity {
             team1_txtfield.setText(tmp);
             team2_txtfield.setText(tmp2);
 
-            int team = (int) dataSnapshot.child("child").getValue();
+            Player player;
+            try {
+                player = (Player) dataSnapshot.getValue(Player.class);
+                active_player.setTeam(player.getTeam());
 
-            if (team == 1){
-
-                team1_txtfield.append(active_username +  "\n");
-            }else{
-                team2_txtfield.append(active_username +  "\n");
+                if (player.getTeam() == 1){
+                    team1_txtfield.append(active_username +  "\n");
+                }else{
+                    team2_txtfield.append(active_username +  "\n");
+                }
+            }catch (Exception e){
+                Log.d("no team", e.toString());
             }
         }
 
@@ -224,12 +228,10 @@ public class GameTeamBuildingActivity extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int which) {
                 Log.i("Item", String.valueOf((which)));
 
-                Map <String, Object> map = new HashMap<String, Object>();
                 Map <String, Object> map2 = new HashMap<String, Object>();
-                Map <String, Object> players = new HashMap<String, Object>();
                 active_player.setTeam(which + 1);
                 map2.put(active_username, active_player);
-                cursor_team.updateChildren(map2);
+                cursor_team.getParent().updateChildren(map2);
             }
         });
 
